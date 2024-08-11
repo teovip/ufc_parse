@@ -24,9 +24,11 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 YaBrowser/24.6.0.0 Safari/537.36',
 }
 
+n = 21
 
-for offset in range (0, 4222, 21):
+for offset in range (0, n+1, 21):
 
+    n += n
     params = {
     'experienceKey': 'answers-en',
     'api_key': '850a88aeb3c29599ce2db46832aa229f',
@@ -77,7 +79,7 @@ for offset in range (0, 4222, 21):
                     if photo_response.status_code == 200:
 
                         filename = os.path.basename(fighter_name) + '.png'
-                        save_path = r'C:\Users\user\Documents\ufc\pic'
+                        save_path = r'C:\Users\showc\Documents\ufc' #change to your directory
                         with open(os.path.join(save_path, filename), 'wb') as f:
                             f.write(photo_response.content)
                         #print(filename)
